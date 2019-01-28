@@ -2,4 +2,4 @@
 
 A retro remix of Galaga and Space Invaders.
 
-(c) John Jackson
+(c) Jane Johannsson, John Jackson
