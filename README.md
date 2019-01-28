@@ -2,4 +2,4 @@
 
 A retro remix of Galaga and Space Invaders.
 
-(c) TODO
+(c) Jane Johannsson
