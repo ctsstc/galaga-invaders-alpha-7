@@ -3,9 +3,9 @@ class Ship
   
   def initialize(x, y, height, width, sprite)
     @x = x
-	@y = y
-	@height = height
-	@width = width
-	@sprite = sprite
+    @y = y
+    @height = height
+    @width = width
+    @sprite = sprite
   end
 end
