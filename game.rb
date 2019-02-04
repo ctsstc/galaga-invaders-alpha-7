@@ -1,5 +1,5 @@
 Class Game
-  attr_accessor()
+  attr_accessor(:player,:lives,:score,:enemies)
   
   def initialize(player, lives, score, enemies)
     @player = player
