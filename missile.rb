@@ -1,10 +1,10 @@
 class Missile
 
-  attr_accessor :x, :y, :velocity
+  attr_accessor :vector, :velocity
 
-  def initialize(x, y)
-    @x = x
-    @y = y
+  def initialize(args)
+    @vector = args.fetch(:vector, Vector.new(200, 200))
+    @velocity = args.fetch(:velocity, 0)
   end
 
   def launch(velocity)
@@ -12,7 +12,7 @@ class Missile
   end
 
   def move
-    self.y += velocity
+    self.vector.y += velocity
   end
 
   def draw
@@ -20,7 +20,7 @@ class Missile
   end
 
   def to_s
-    "#{falling? ? '☄️' : '🚀'} (#{x}, #{y})"
+    "#{falling? ? '☄️' : '🚀'} (#{vector.x}, #{vector.y})"
   end
 
   def falling?

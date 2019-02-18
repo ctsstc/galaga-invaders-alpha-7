@@ -18,4 +18,11 @@ class MissileCollection
     missiles.each(&:draw)
   end
 
+  def fire_for(firable)
+    add(Missile.new({
+      vector: firable.muzzle_location,
+      velocity: firable.ordnance_velocity
+    }))
+  end
+
 end
