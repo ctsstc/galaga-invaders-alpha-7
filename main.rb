@@ -1,3 +1,4 @@
+require_relative 'alien'
 require_relative 'ship'
 require_relative 'missile_collection'
 
@@ -6,11 +7,12 @@ class GalagaInvaders
   WIDTH = 1920
   HEIGHT = 1080
 
-  attr_accessor :ship, :missiles
+  attr_accessor :ship, :alien, :missiles
 
   def initialize
     @caption = "Galaga Invaders"
     @ship = Ship.new(WIDTH, HEIGHT)
+    @alien = Alien.new
     @missiles = MissileCollection.new
   end
 
@@ -20,6 +22,7 @@ class GalagaInvaders
 
   def draw
     ship.draw
+    alien.draw
     missiles.draw
   end
 
@@ -38,6 +41,9 @@ class GalagaInvaders
       ship.move_right
     elsif key == ' '
       ship.fire(missiles)
+    end
+    if key == 'p'
+      alien.fire(missiles)
     end
   end
 
