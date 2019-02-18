@@ -3,11 +3,14 @@ require_relative 'missile_collection'
 
 class GalagaInvaders
 
+  WIDTH = 1920
+  HEIGHT = 1080
+
   attr_accessor :ship, :missiles
 
   def initialize
     @caption = "Galaga Invaders"
-    @ship = Ship.new
+    @ship = Ship.new(WIDTH, HEIGHT)
     @missiles = MissileCollection.new
   end
 
