@@ -20,7 +20,11 @@ class Missile
   end
 
   def to_s
-    "🚀 (#{x}, #{y})"
+    "#{falling? ? '☄️' : '🚀'} (#{x}, #{y})"
+  end
+
+  def falling?
+    velocity > 0
   end
 
 end
