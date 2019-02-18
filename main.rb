@@ -50,3 +50,13 @@ class GalagaInvaders
 end
 
 GalagaInvaders.new.show
+
+=begin
+Reflecting on Principle
+-----------------------
+1. True or False: Good OO design eliminates dependencies.
+2. Briefly list four ways in which a class that collaborates with another class
+   is dependent on it. (For example, one dependency is knowing the other class name.)
+3. What are two primary factors to consider when assessing the risk of a dependency?
+4. What is Metz's rule of thumb for choosing a dependency direction?
+=end
