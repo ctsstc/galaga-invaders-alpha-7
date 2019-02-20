@@ -36,6 +36,10 @@ class GalagaInvaders
       ship.move_left
     elsif key == 'd'
       ship.move_right
+    elsif key == ' '
+      missiles.fire_from(ship)
+    elsif key == 'p'
+      missiles.fire_from(alien)
     end
   end
 
