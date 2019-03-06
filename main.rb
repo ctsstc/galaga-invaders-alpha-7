@@ -4,6 +4,7 @@ class GalagaInvaders
 
   def initialize
     @caption = "Galaga Invaders"
+    @base
   end
 
   def update
