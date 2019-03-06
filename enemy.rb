@@ -1,4 +1,5 @@
 class Enemy
+  include Destroyable
 
   WIDTH = 50
   HEIGHT = 50
