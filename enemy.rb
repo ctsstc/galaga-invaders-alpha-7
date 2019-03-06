@@ -1,4 +1,5 @@
 class Enemy
+  include Movable
 
   WIDTH = 50
   HEIGHT = 50
@@ -8,9 +9,6 @@ class Enemy
   def initialize
     @x = 200
     @y = 200
-  end
-
-  def move
   end
 
   def draw
