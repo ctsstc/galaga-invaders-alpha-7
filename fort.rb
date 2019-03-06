@@ -1,10 +1,17 @@
 class Fort
+  
+  include Drawable
+  
   attr_reader :x, :y
   
   def initialize(x, y)
     @x = x
     @y = y
     @blocks = initBlocks
+  end
+  
+  def sprite
+    "🏯"
   end
   
   def initBlocks

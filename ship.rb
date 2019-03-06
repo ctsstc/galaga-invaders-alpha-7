@@ -2,6 +2,8 @@ class Ship
   include Movable
   include Destroyable
 
+  include Drawable
+  
   WIDTH = 100
   HEIGHT = 100
   ORDNANCE_VELOCITY = -10
@@ -21,12 +23,8 @@ class Ship
     Vector.new(x, top_edge)
   end
 
-  def draw
-    puts self
-  end
-
-  def to_s
-    "✈️ (#{x}, #{y})"
+  def sprite
+    "✈️"
   end
 
   private

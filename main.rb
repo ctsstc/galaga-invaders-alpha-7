@@ -9,6 +9,7 @@ class GalagaInvaders
 
   def initialize
     @caption = "Galaga Invaders"
+    @base
     @missiles = MissileManager.new()
     @ship = Ship.new(WIDTH, HEIGHT)
   end
