@@ -2,6 +2,7 @@ require_relative 'vector'
 
 class Missile
   include Movable
+  include Destroyable
 
   attr_accessor :vector
   attr_reader :sprite
