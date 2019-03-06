@@ -1,5 +1,7 @@
 class Ship
 
+  include Drawable
+  
   WIDTH = 100
   HEIGHT = 100
   DEFAULT_VELOCITY = 5
@@ -27,13 +29,9 @@ class Ship
   def move_right
     move(DEFAULT_VELOCITY)
   end
-
-  def draw
-    puts self
-  end
-
-  def to_s
-    "✈️ (#{x}, #{y})"
+  
+  def sprite
+    "✈️"
   end
 
   private

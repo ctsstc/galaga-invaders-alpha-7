@@ -1,5 +1,7 @@
 class Enemy
 
+  include Drawable
+  
   WIDTH = 50
   HEIGHT = 50
 
@@ -13,12 +15,8 @@ class Enemy
   def move
   end
 
-  def draw
-    puts self
-  end
-
-  def to_s
-    "👾 (#{x}, #{y})"
+  def sprite
+    "👾"
   end
 
   def ordnance_velocity
