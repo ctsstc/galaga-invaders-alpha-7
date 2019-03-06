@@ -1,4 +1,5 @@
 class Ship
+  include Destroyable
 
   include Drawable
   

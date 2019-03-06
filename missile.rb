@@ -1,6 +1,7 @@
 require_relative 'vector'
 
 class Missile
+  include Destroyable
 
   include Drawable
   

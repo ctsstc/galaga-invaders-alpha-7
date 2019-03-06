@@ -1,4 +1,5 @@
 class Enemy
+  include Destroyable
 
   include Drawable
   
