@@ -1,4 +1,5 @@
 class Ship
+  include Destroyable
 
   WIDTH = 100
   HEIGHT = 100
