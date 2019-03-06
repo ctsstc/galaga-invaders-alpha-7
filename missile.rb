@@ -1,6 +1,7 @@
 require_relative 'vector'
 
 class Missile
+  include Movable
 
   attr_accessor :vector
   attr_reader :sprite
@@ -18,7 +19,7 @@ class Missile
   end
 
   def move
-    vector.y += velocity
+    move_down(velocity)
   end
 
   def to_s
