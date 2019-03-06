@@ -2,31 +2,51 @@ require_relative 'ship'
 
 class GalagaInvaders
 
+  WIDTH = 1920
+  HEIGHT = 1080
+
+  attr_accessor :ship, :missiles
+
   def initialize
     @caption = "Galaga Invaders"
+<<<<<<< HEAD
     @base
+=======
+    @missiles = MissileManager.new()
+    @ship = Ship.new(WIDTH, HEIGHT)
+>>>>>>> de8a212f851256e189d1b407fc415e206eec14b2
   end
 
   def update
-    #Aliens are moving
+    ship.update
+    missiles.update
   end
 
   def draw
-    @ship.draw
+    ship.draw
+    missiles.draw
   end
 
   def show
-    update
-    while (true)
+    while (true) do
       update
       draw
+      key_pressed(gets.chomp) # Simulating a key interrupt.
     end
   end
 
   def key_pressed(key)
-    key == 'a' ? @ship.move(-2) : key == 'd' ? @ship.move(2) : @ship.fire
+    if key == 'a'
+      ship.move_left
+    elsif key == 'd'
+      ship.move_right
+    elsif key == ' '
+      missiles.fire_from(ship)
+    elsif key == 'p'
+      missiles.fire_from(alien)
+    end
   end
-  
+
 end
 
 GalagaInvaders.new.show

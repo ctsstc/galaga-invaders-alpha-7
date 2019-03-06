@@ -1,16 +1,27 @@
+require_relative 'vector'
+
 class Missile
 
-  def initialize(x, y, width, height, sprite, x_velocity, y_velocity)
-	  @x = x
-	  @y = y
-	  @height = height
-    @width = width
-    @sprite = sprite
-	  @x_velocity = x_velocity
-    @y_velocity = y_velocity
+  attr_accessor :vector
+  attr_reader :sprite
+
+  def initialize(args)
+    @vector = args.fetch(:vector, Vector.new(0, 0))
+    @height = args.fetch(:height, 100)
+    @width = args.fetch(:width, 100)
+    @sprite = '👾'
+    @velocity = args.fetch(:velocity, 0)
   end
 
   def draw
-  	#draws the missile
+    puts self
+  end
+
+  def move
+    vector.y += velocity
+  end
+
+  def to_s
+    "#{sprite} (#{vector.x}#{vector.y})"
   end
 end
