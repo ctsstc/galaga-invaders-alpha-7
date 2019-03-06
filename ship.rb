@@ -1,8 +1,8 @@
 class Ship
+  include Movable
 
   WIDTH = 100
   HEIGHT = 100
-  DEFAULT_VELOCITY = 5
   ORDNANCE_VELOCITY = -10
 
   attr_accessor :x, :y
@@ -20,14 +20,6 @@ class Ship
     Vector.new(x, top_edge)
   end
 
-  def move_left
-    move(-DEFAULT_VELOCITY)
-  end
-
-  def move_right
-    move(DEFAULT_VELOCITY)
-  end
-
   def draw
     puts self
   end
@@ -37,10 +29,6 @@ class Ship
   end
 
   private
-
-  def move(delta)
-    self.x += delta
-  end
 
   def top_edge
     y - half_height
