@@ -3,14 +3,13 @@ require_relative 'vector'
 class Missile
   include Movable
   include Destroyable
-
+  include Locatable
   include Drawable
-  
-  attr_accessor :x, :y
 
   def initialize(args)
-    @x = args.fetch(:x, 0)
-    @y = args.fetch(:y, 0)
+    x = args.fetch(:x, 0)
+    y = args.fetch(:y, 0)
+    @vector = Vector.new(x, y)  
     @height = args.fetch(:height, 100)
     @width = args.fetch(:width, 100)
     @velocity = args.fetch(:velocity, 0)

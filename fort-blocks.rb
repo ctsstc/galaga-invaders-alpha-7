@@ -1,10 +1,9 @@
 
 class FortBlocks
   include Destroyable
-  attr_reader :x, :y
+  include Locatable
 
-  def initialize(x, y)
-    @x = x
-    @y = y
+  def initialize(vector)
+    @vector = vector 
   end
 end

@@ -1,18 +1,17 @@
 class Ship
   include Movable
   include Destroyable
-
+  include Locatable
   include Drawable
   
   WIDTH = 100
   HEIGHT = 100
   ORDNANCE_VELOCITY = -10
 
-  attr_accessor :x, :y
-
   def initialize(screen_width, screen_height)
-    @x = screen_width / 2
-    @y = screen_height - half_height
+    x = screen_width / 2
+    y = screen_height - half_height
+    @vector = Vector.new(x, y)
   end
 
   def ordnance_velocity
@@ -29,6 +28,10 @@ class Ship
 
   private
 
+  def move(delta)
+    x += delta
+  end
+
   def top_edge
     y - half_height
   end
@@ -39,4 +42,3 @@ class Ship
 
 end
 
-Vector = Struct.new(:x, :y)
