@@ -19,8 +19,8 @@ class Base
     forts
   end
   
-  def makeFort(x, y)
-    Fort.new(x, y)
+  def makeFort(vector)
+    Fort.new(vector)
   end
   
   def to_s

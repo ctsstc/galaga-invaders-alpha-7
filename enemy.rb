@@ -1,19 +1,13 @@
 class Enemy
   include Destroyable
-
+  include Locatable
   include Drawable
   
   WIDTH = 50
   HEIGHT = 50
 
-  attr_accessor :x, :y
-
   def initialize
-    @x = 200
-    @y = 200
-  end
-
-  def move
+    @vector = Vector.new(200, 200)
   end
 
   def sprite

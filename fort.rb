@@ -1,12 +1,10 @@
 class Fort
   
   include Drawable
+  include Locatable
   
-  attr_reader :x, :y
-  
-  def initialize(x, y)
-    @x = x
-    @y = y
+  def initialize(vector)
+    @vector = vector 
     @blocks = initBlocks
   end
   
