@@ -5,13 +5,14 @@ class GalagaInvaders
   WIDTH = 1920
   HEIGHT = 1080
 
-  attr_accessor :ship, :missiles
+  attr_accessor :ship, :missiles, :enemy
 
   def initialize
     @caption = "Galaga Invaders"
     @base
     @missiles = MissileManager.new()
     @ship = Ship.new(WIDTH, HEIGHT)
+    @enemy = Enemy.new()
   end
 
   def update
@@ -22,6 +23,8 @@ class GalagaInvaders
   def draw
     ship.draw
     missiles.draw
+    enemy.draw
+    #draw forts (tbd)
   end
 
   def show
